@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewData["Title"] = "首页";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Styles{
+    <environment include="Development">
+        <link href="~/css/site.css" rel="stylesheet" />
+    </environment>
+    <environment exclude="Development">
+        <link href="~/css/site.min.css" rel="stylesheet" asp-append-version="true" />
+    </environment>
+}
+
+
+<main class="container main alt-main" style="min-height:600px">
+    <h1 class="text-center alt-h1">在 Askme，学习技能、解决问题</h1>
+    <p class="text-center">分享知识，学术交流，帮助他人解决问题，我们乐在其中！</p>
+
+    <p class="text-center">
+        <a href="~/question/new?page=1" class="jionus-link">学习技能，解决问题</a>
+    </p>
+    <img src="~/images/home-illo-team.svg" class="index-bg" />
+</main>
+
+

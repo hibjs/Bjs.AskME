@@ -1,0 +1,77 @@
+<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Migrations\20180324083029_20180324_V1.cs" />
+    <Compile Remove="Migrations\20180324083235_20180324_V1.cs" />
+    <Compile Remove="Migrations\20180324083414_20180324_V1.cs" />
+    <Compile Remove="Migrations\20180414161056_20180415_V1.cs" />
+    <Compile Remove="Migrations\20180414162413_20180415_v1.cs" />
+    <Compile Remove="Migrations\20180414162814_20180415_v1.cs" />
+    <Compile Remove="Migrations\20180414163328_20180415_v1.cs" />
+    <Compile Remove="Migrations\20180414164019_20180415_v1.cs" />
+    <Compile Remove="Migrations\20180414164249_20180415_v1.cs" />
+    <Compile Remove="Migrations\20180414164440_20180415_v1.cs" />
+    <Compile Remove="Migrations\20180414164700_20180415_v1.cs" />
+    <Compile Remove="Migrations\20180414164801_20180415_v1.cs" />
+    <Compile Remove="Migrations\20180414165004_20180415_v1.cs" />
+    <Compile Remove="Migrations\20180414165620_20180415_v1.cs" />
+    <Compile Remove="Migrations\20180414170019_20180415_v1.cs" />
+    <Compile Remove="Migrations\20180414170225_20180415_v1.cs" />
+    <Compile Remove="Migrations\20180414170314_20180415_v1.cs" />
+    <Compile Remove="Migrations\20180414170600_20180415_v1.cs" />
+    <Compile Remove="Migrations\20180414170929_20180415_v1.cs" />
+    <Compile Remove="Migrations\20180414171104_20180415_v1.cs" />
+    <Compile Remove="Migrations\20180414171151_20180415_v1.cs" />
+    <Compile Remove="Migrations\20180414171509_20180415_v1.cs" />
+    <Compile Remove="Migrations\20180414171544_20180415_v1.cs" />
+    <Compile Remove="Migrations\20180414171605_20180415_v1.cs" />
+    <Compile Remove="Migrations\20180414172032_20180415_v2.cs" />
+    <Compile Remove="Migrations\20180415091518_20180415_v3.cs" />
+    <Compile Remove="Migrations\20180415091754_20180415_v3.cs" />
+    <Compile Remove="Migrations\20180415091950_20180415_v3.cs" />
+    <Compile Remove="Migrations\20180415102734_20180415_v4.cs" />
+    <Compile Remove="Migrations\20180415103443_20180415_v4.cs" />
+    <Compile Remove="Migrations\20180415103550_20180415_v4.cs" />
+    <Compile Remove="Migrations\20180415113049_20180415_v5.cs" />
+    <Compile Remove="Migrations\20180415113757_20180415_V5.cs" />
+    <Compile Remove="Migrations\20180415114103_20180415_V5.cs" />
+    <Compile Remove="Migrations\20180415121004_20180415_V6.cs" />
+    <Compile Remove="Migrations\20180415121328_20180415_V6.cs" />
+    <Compile Remove="Migrations\20180415121707_20180415_V6.cs" />
+    <Compile Remove="Migrations\20180415122609_20180415_V6.cs" />
+    <Compile Remove="Migrations\20180415135843_20180415_V1.cs" />
+    <Compile Remove="Migrations\20180415140423_20180415_V2.cs" />
+    <Compile Remove="Migrations\20180415140926_20180415_V3.cs" />
+    <Compile Remove="Migrations\20180415141017_20180415_V3.cs" />
+    <Compile Remove="Migrations\20180415141454_20180415_V4.cs" />
+    <Compile Remove="Migrations\20180416100228_20180416_V1.cs" />
+    <Compile Remove="Migrations\20180416100433_20180416_V1.cs" />
+    <Compile Remove="Migrations\20180417123019_20180417_V1.cs" />
+    <Compile Remove="Migrations\20180417123220_20180417_V1.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AskME.Core\AskME.Core.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Reids\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.0.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNetCore.Hosting.Abstractions">
+      <HintPath>C:\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.hosting.abstractions\2.0.1\lib\netstandard2.0\Microsoft.AspNetCore.Hosting.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http.Features">
+      <HintPath>C:\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.http.features\2.0.1\lib\netstandard2.0\Microsoft.AspNetCore.Http.Features.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

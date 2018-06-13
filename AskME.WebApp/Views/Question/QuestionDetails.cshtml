@@ -1,0 +1,95 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Styles{
+    <environment include="Development">
+        <link href="~/css/question.css" rel="stylesheet" />
+    </environment>
+    <environment exclude="Development">
+        <link href="~/css/question.min.css" asp-append-version="true" rel="stylesheet" />
+    </environment>
+}
+
+
+<div class="container main">
+    <div class="question-header">
+        <h1 class="question-title">@Html.Raw(ViewBag.Question.Title)</h1>
+        <div class="question-tags">
+            @{
+                foreach (var tag in ViewBag.Question.Tags)
+                {
+                    <a href="#" class="post-tag post-tag-hover">@Html.Raw(tag.TagName)</a>
+                }
+            }
+        </div>
+        <div class="question-auth">
+            <a href="#">@Html.Raw(ViewBag.Question.UserName)</a> <span class="datetime">@Html.Raw(ViewBag.Question.SubTime)</span>
+        </div>
+    </div>
+
+    <div class="widget-question">
+        <div class="widget-vote">
+            <a href="javascript:void(0)" title="问题对人有帮助，内容完整，我也想知道答案"><span class="iconfont icon-up"></span></a>
+            <span>@ViewBag.Question.Count</span>
+            <a href="javascript:void(0)" title="问题没有实际价值，缺少关键内容，没有改进余地"><span class="iconfont icon-down"></span></a>
+        </div>
+        <div class="question" data-markdown="true">
+            @Html.Raw(ViewBag.Question.Description)
+        </div>
+    </div>
+
+
+    <div class="widget-answers">
+        <div class="subheader">
+            <p class="h-top-title">@ViewBag.Question.Count 个回答</p>
+            <div class="tabs">
+                <a href="#" class="youarehere">全部</a>
+            </div>
+        </div>
+        @{
+            foreach (var answer in ViewBag.Question.Answers)
+            {
+                <div class="answer">
+                    <div class="widget-vote">
+                        <a href="javascript:void(0)" title="答案对人有帮助，有参考价值"><span class="iconfont icon-up"></span></a>
+                        <span>0</span>
+                        <a href="javascript:void(0)" title="答案没帮助，是错误的答案，答非所问"><span class="iconfont icon-down"></span></a>
+                    </div>
+                    <div class="answer-content">
+                        <div class="answer-details" data-markdown="true">
+                            @Html.Raw(answer.AnserContent)
+                        </div>
+                        <p class="answer-author"><span class="datetime"> @Html.Raw(answer.SubTime)</span> <span><a href="#/@answer.UserId">@Html.Raw(answer.UserName)</a></span></p>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            }
+        }
+
+        <h4 class="clear">撰写答案</h4>
+        <form>
+            <div class="form-group">
+                <input type="hidden" value="@ViewBag.Question.Id" id="qId" />
+                <textarea class="form-textarea mdediter" col="20" id="answer" placeholder="撰写答案...." oninput="preView(this)"></textarea>
+                <div class="grippie"></div>
+            </div>
+            <div class="preview" id="preview">
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-ask pull-right" id="answerBtn">提交回答</button>
+            </div>
+        </form>
+    </div>
+</div>
+@section Scripts{
+    <environment include="Development">
+        <script src="~/js/question.js"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/question.min.js" asp-append-version="true"></script>
+    </environment>
+}
+
+
+

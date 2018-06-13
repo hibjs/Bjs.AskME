@@ -1,0 +1,156 @@
+[
+  {
+    "outputFileName": "wwwroot/css/site.min.css",
+    "inputFiles": [
+      "wwwroot/css/site.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/site.min.js",
+    "inputFiles": [
+      "wwwroot/js/site.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/js/login.min.js",
+    "inputFiles": [
+      "wwwroot/js/login.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/js/ask.min.js",
+    "inputFiles": [
+      "wwwroot/js/ask.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/js/register.min.js",
+    "inputFiles": [
+      "wwwroot/js/register.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/css/tags.min.css",
+    "inputFiles": [
+      "wwwroot/css/tags.css"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/css/question.min.css",
+    "inputFiles": [
+      "wwwroot/css/question.css"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/js/question.min.js",
+    "inputFiles": [
+      "wwwroot/js/question.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/js/user.min.js",
+    "inputFiles": [
+      "wwwroot/js/user.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/css/freamwork.min.css",
+    "inputFiles": [
+      "wwwroot/css/freamwork.css"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/css/users.min.css",
+    "inputFiles": [
+      "wwwroot/css/users.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/ask.min.css",
+    "inputFiles": [
+      "wwwroot/css/ask.css"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/css/login.min.css",
+    "inputFiles": [
+      "wwwroot/css/login.css"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/css/signup.min.css",
+    "inputFiles": [
+      "wwwroot/css/signup.css"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/css/advince.min.css",
+    "inputFiles": [
+      "wwwroot/css/advince.css"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/css/markdown.min.css",
+    "inputFiles": [
+      "wwwroot/css/markdown.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/md.min.js",
+    "inputFiles": [
+      "wwwroot/js/md.js"
+    ]
+  }
+]

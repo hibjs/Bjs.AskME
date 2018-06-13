@@ -1,0 +1,137 @@
+﻿@{
+    ViewData["Title"] = "用户 - Atom - 修改";
+    Layout = "~/Views/Shared/_LayoutAccount.cshtml";
+}
+<main class="container main" style="min-height:800px">
+    <div class="sm-12">
+        <div class="subheader">
+            <div class="tabs tab-left">
+                <a href="~/users/@User.Claims.Single(c=>c.Type==System.Security.Claims.ClaimTypes.Sid).Value/@User.Identity.Name">主页</a>
+                <a href="~/users/@User.Claims.Single(c=>c.Type==System.Security.Claims.ClaimTypes.Sid).Value/@User.Identity.Name/activity?tab=question">足迹</a>
+                <a href="~/users/edit/@User.Claims.Single(c=>c.Type==System.Security.Claims.ClaimTypes.Sid).Value" class="youarehere">修改个人信息</a>
+            </div>
+        </div>
+        <!--SIDEMENU-->
+        <div class="side-menu sm-2">
+            <ul style="margin:0;padding:0">
+                <li class="category">
+                    个人信息
+                    <ul>
+                        <li><a href="#" class="side-menu-active">基本信息</a></li>
+                    </ul>
+                </li>
+
+                <li class="category">
+                    邮件设置
+                    <ul>
+                        <li><a href="#">电子邮件设置</a></li>
+                    </ul>
+                </li>
+
+                <li class="category">
+                    安全设置
+                    <ul>
+                        <li><a href="#">账户安全</a></li>
+                        <li><a href="#">修改密码</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="mainbar sm-10">
+            <h3>编辑你的个人信息</h3>
+            <form>
+                <!--基本信息-->
+                <div class="inner-container">
+                    <h4>公开信息</h4>
+                    <div class="sm-3">
+                        <div class="avatar-wrapper">
+                            <img src="@Html.Raw(ViewBag.UserInfo.Icon==null||ViewBag.UserInfo.Icon==""?"/images/userIcon.jpg":ViewBag.UserInfo.Icon)" class="main-image" id="userIcon" />
+                            <a href="javascript:void(0)" class="change-picture" onclick="$('#uploadIconModel').show()">更改图片</a>
+                        </div>
+                    </div>
+                    <div class="sm-9">
+                        <div class="form-group">
+                           
+                            <label>昵称</label><br />
+                            <input type="text" placeholder="毕十三" class="form-input" id="userName" value="@Html.Raw(ViewBag.UserInfo.UserName??string.Empty)" />
+                        </div>
+
+                        <div class="form-group">
+                            <label>所在城市</label><br />
+                            <input type="text" placeholder="郑州，河南" class="form-input" id="address" value="@Html.Raw(ViewBag.UserInfo.Address??string.Empty)" /><br />
+                        </div>
+                        <div class="form-group">
+                            <label>签名</label><br />
+                            <input type="text" placeholder="I love a girl" class="form-input" id="bio" value="@Html.Raw(ViewBag.UserInfo.Bio??string.Empty)" /><br />
+                        </div>
+                    </div>
+                    <div class="form-group sm-12">
+                        <label>关于我</label>
+                        <textarea rows="6" class="form-textarea" placeholder="我是一个走在路上的程序猿，这个网站经过多少次的" id="about">@Html.Raw(ViewBag.UserInfo.SelfInfo??string.Empty)</textarea>
+                    </div>
+                </div>
+                <!--社交-->
+                <div class="inner-container web-presence">
+                    <h4>社交</h4>
+                    <div class="sm-4">
+                        <div class="form-group">
+                            <label>电话</label>
+                            <span class="iconfont icon-tel input-icon "></span>
+                            <input type="text" class="form-input" id="telNumber" value="@Html.Raw(ViewBag.UserInfo.TelNumber??string.Empty)" />
+                        </div>
+                    </div>
+                    <div class="sm-4">
+                        <div class="form-group">
+                            <label>微信</label>
+                            <span class="iconfont icon-wechat input-icon"></span>
+                            <input type="text" class="form-input" id="wechat" value="@Html.Raw(ViewBag.UserInfo.WeChat??string.Empty)" />
+                        </div>
+                    </div>
+                    <div class="sm-4 ">
+                        <div class="form-group">
+                            <label>QQ</label>
+                            <span class="iconfont icon-qq  input-icon"></span>
+                            <input type="text" class="form-input" id="qq" value="@Html.Raw(ViewBag.UserInfo.QQ??string.Empty)" />
+                        </div>
+                    </div>
+                </div>
+                <!--隐私信心-->
+                <div class="inner-container" style="margin-top:120px">
+                    <button class="btn btn-ask" id="save" type="button">保存个人信息</button><a href=" #" class="link-cancel">取消</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+
+<div class="modal-wrapper" id="uploadIconModel">
+    <div class="modal-backdrop"></div>
+    <div class="modal modal-large questionask-modal">
+        <div class="modal-inner">
+            <div class="user-model-icon-upload" onclick="$('input[id=fileInput]').click();">
+                <p class="text-center"><img id="preView" /></p>
+            </div>
+            <input type="file" id="fileInput" style="display:none;" onchange="handleFiles(this,this.files)" multiple accept="image/*" />
+
+            <div class="user-model-icon-upload-footer">
+                <button type="button" class="btn btn-ask pull-right" id="upLoadIcon">上传图片</button>
+            </div>
+        </div>
+        <button type="button" title="关闭" class="button modal-closebutton">
+            <i class="iconfont icon-close modal-closeicon"></i>
+        </button>
+    </div>
+</div>
+@section Scripts{
+    <environment include="Development">
+        <script src="~/js/user.js"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/user.min.js" asp-append-version="true"></script>
+    </environment>
+}
+
+
+
+

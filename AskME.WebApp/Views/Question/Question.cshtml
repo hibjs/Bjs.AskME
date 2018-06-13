@@ -1,0 +1,100 @@
+﻿
+@{
+    ViewData["Title"] = "最新问答";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Styles{
+    <environment include="Development">
+        <link href="~/css/site.css" rel="stylesheet" />
+    </environment>
+    <environment exclude="Development">
+        <link href="~/css/site.min.css" rel="stylesheet" asp-append-version="true" />
+    </environment>
+}
+<main class="container main">
+    <div class="sm-8">
+        <div class="subheader">
+            <p class="h-top-title">问答</p>
+            <div class="tabs">
+                <a href="~/question/new?page=1" class="@(ViewContext.RouteData.Values["tab"].ToString() == "new" ? "youarehere" : "")">最新</a>
+                <a href="~/question/hot?page=1" class="@(ViewContext.RouteData.Values["tab"].ToString() == "hot" ? "youarehere" : "")">热门</a>
+                <a href="~/question/unanswered?page=1" class="@(ViewContext.RouteData.Values["tab"].ToString() == "unanswered" ? "youarehere" : "")">待回答</a>
+            </div>
+        </div>
+        <div class="page-content">
+            @{
+                foreach (var q in ViewBag.Questions)
+                {
+                    <div class="question-summary">
+                        <div class="statscontainer">
+                            <div class="stats">
+                                <div class="vote">
+                                    <div class="votes">
+                                        <span class="vote-count-post">
+                                            <strong>@(q.Up + q.Down)</strong>
+                                        </span>
+                                        <div class="viewcount">投票</div>
+                                    </div>
+                                </div>
+                                <div class="status @(q.Count > 0 ? "answered" : "unanswered") answered">
+                                    <span class="status-count-post">
+                                        <strong>@(q.Count)</strong>
+                                    </span>
+                                    <div class="viewcount">回答</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="summary">
+                            <h3 class="question-hyperlink">
+                                <a href="/question/@q.Id">@Html.Raw(q.Title)</a>
+                            </h3>
+                            <div class="excerpt">
+                                @Html.Raw(q.Description)
+                            </div>
+                            <div class="tags ">
+                                @{
+                                    foreach (var t in q.Tags)
+                                    {
+                                        <a href="~/question/tagged/@Html.Raw(t.TagName)" class="post-tag post-tag-hover">@Html.Raw(t.TagName)</a>
+                                    }
+                                }
+                            </div>
+                            <div class="user-info">
+                                <span class="datetime">@Html.Raw(q.SubTime)</span>
+                                <a href="#">@Html.Raw(q.UserName)</a>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+    <div class="sm-4 sidebar">
+        <div class="module">
+            <div class="-details">
+                <div class="summarycount">@ViewBag.Count</div>
+                <small class="pull-left">问答</small>
+            </div>
+            <div class="aside-cta" role="navigation" aria-label="ask new question">
+                <a asp-route="Advince" class="btn-ask">Ask 提问</a>
+            </div>
+        </div>
+
+        <div class="module related-tags">
+            <h4 class="related-tags-title">热门标签</h4>
+            <ul>
+                @{ foreach (AskME.Core.Entities.Tag tag in ViewBag.TopTags)
+                    {
+                        <li><a href="~/question/tagged/@tag.TagName" class="post-tag post-tag-hover">@Html.Raw(tag.TagName)</a> × <span>@tag.Count</span> </li>
+                    }
+                }
+            </ul>
+        </div>
+    </div>
+    <div class="page sm-8">
+        <a href="~/question/@ViewContext.RouteData.Values["tab"].ToString()?page=@((ViewBag.Page-1)==0?1:(ViewBag.Page-1))">Previous</a>
+        <a href="~/question/@ViewContext.RouteData.Values["tab"].ToString()?page=@(ViewBag.Page+1)">Next</a>
+    </div>
+</main>

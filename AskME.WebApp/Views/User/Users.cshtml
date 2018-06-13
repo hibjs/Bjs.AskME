@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewData["Title"] = "网站用户";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Styles{
+    <link href="~/css/site.css" rel="stylesheet" />
+}
+
+    <main class="container main">
+        <div class="sm-12">
+            <div class="subheader">
+                <p class="h-top-title">用户</p>
+                <div class="tabs">
+                    <a href="#" class="youarehere">全部</a>
+                </div>
+            </div>
+            <div class="users" style="min-height:600px">
+                @{
+                foreach (AskME.Core.Entities.UserInfo user in ViewBag.Users)
+                {
+                    <div class="userInfo">
+                        <div class="user-gravatar">
+                            <img src="@(user.Icon != null ? user.Icon : "/images/userIcon.jpg")" />
+                        </div>
+                        <div class="user-details">
+                            <a href="~/users/@user.Id/@user.UserName">@Html.Raw(user.UserName)</a>
+                            <a href="~/users/@user.Id/@user.UserName">@Html.Raw(user.Address)</a>
+                        </div>
+                        <div class="user-tags">
+                            @{
+                            foreach (var tag in user.Tags)
+                            {
+                                @Html.Raw(tag.TagName + "，")
+                        }
+                            }
+                        </div>
+                    </div>
+            }
+                }
+            </div>
+        </div>
+
+        <div class="page sm-8">
+            <a href="~/user?page=@((ViewBag.Page-1)==0?1:(ViewBag.Page-1))">Previous</a>
+            <a href="~/user?page=@(ViewBag.Page+1)">Next</a>
+        </div>
+    </main>
+

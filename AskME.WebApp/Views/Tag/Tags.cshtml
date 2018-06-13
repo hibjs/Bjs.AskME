@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewData["Title"] = "标签";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Styles{
+    <environment include="Development">
+        <link href="~/css/tags.css" rel="stylesheet" />
+    </environment>
+    <environment exclude="Development">
+        <link href="~/css/tags.min.css" rel="stylesheet" asp-append-version="true" />
+    </environment>
+}
+    <div class="main container">
+        <div class="sm-12">
+            <div class="subheader">
+                <p class="h-top-title">标签</p>
+                <div class="tabs">
+                    <a href="#" class="youarehere">按名称</a>
+                </div>
+            </div>
+            <p class="subtitle">标签是最有效的内容组织形式，正确的使用标签能更快的发现和解决你的问题</p>
+            <input type="text" class="form-input" style="width:200px" placeholder="通过标签名查询" />
+
+            <div class="tag-list">
+                @{
+                foreach (AskME.Core.Entities.Tag tag in ViewBag.Tags)
+                {
+                    <div class="tag-cell">
+                        <p><a href="~/question/tagged/@Html.Raw(tag.TagName)" class="post-tag post-tag-hover">@Html.Raw(tag.TagName)</a> <span class="item-multiplier">× @tag.Count</span></p>
+                        <p class="excerpt">
+                            @Html.Raw(tag.Description.Length > 80 ? tag.Description.Substring(0, 80) + "..." : tag.Description)
+                        </p>
+                    </div>
+            }
+                }
+            </div>
+        </div>
+        <div class="page sm-12">
+            <a href="~/tags?page=@((ViewBag.Page-1)==0?1:(ViewBag.Page-1))">Previous</a>
+            <a href="~/tags?page=@(ViewBag.Page+1)">Next</a>
+        </div>
+    </div>

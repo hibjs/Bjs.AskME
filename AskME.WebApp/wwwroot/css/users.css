@@ -1,0 +1,259 @@
+﻿.side-menu {
+    padding-bottom: 40px
+}
+
+.category {
+    list-style-type: none;
+    font-size: 13px;
+    color: #F48024;
+    text-align: left;
+    margin-top: 20px
+}
+
+    .category > ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        margin-top: 10px;
+    }
+
+        .category > ul li {
+            line-height: 24px;
+            text-align: left
+        }
+
+            .category > ul li a {
+                color: #848D95;
+                text-decoration: none;
+                font-size: 13px
+            }
+
+                .category > ul li a:hover {
+                    color: #242729
+                }
+
+.side-menu-active {
+    font-weight: 600;
+    color: #242729 !important
+}
+
+
+/* ./ end sidemuen */
+
+.inner-container {
+    border-top: 1px solid #EAEAEA;
+    clear: both;
+}
+
+    .inner-container label {
+        line-height: 32px;
+        font-size: 13px
+    }
+
+
+.user-show-new h4, .user-show-new h3 {
+    font-weight: 400
+}
+
+
+
+/* input icon */
+.avatar-wrapper {
+    position: relative;
+}
+
+.main-image {
+    width: 160px;
+    margin-top: 16px;
+    border-radius: 3px
+}
+
+.change-picture {
+    text-align: center;
+    color: #fff;
+    font-size: 13px;
+    width: 160px;
+    padding: 8px 0;
+    float: left;
+    position: absolute;
+    left: 0;
+    bottom: 4px;
+    background: rgba(12,13,14,0.6);
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px
+}
+
+    .change-picture:hover {
+        background: rgba(12,13,14,0.8);
+    }
+/**社交**/
+.inner-container .sm-3 input, .inner-container .sm-4 input, .inner-container .sm-6 input {
+    width: 94%;
+}
+
+.web-presence .sm-4 {
+    position: relative
+}
+
+    .web-presence .sm-4 input {
+        text-indent: 26px
+    }
+
+
+.input-icon {
+    position: absolute;
+    top: 40px;
+    left: 4px;
+}
+
+.link-cancel {
+    text-decoration: none;
+    margin-left: 16px;
+    font-size: 13px
+}
+
+
+/** widget-vote **/
+.question {
+    clear: both;
+    margin-top: 12px;
+    border-bottom: 1px solid #E4E6E8;
+    min-height: 86px;
+    margin-top: 10px
+}
+
+.widget-vote {
+    float: left;
+    margin-top: 20px
+}
+
+.widget-vote-item {
+    float: left;
+    text-align: center;
+    padding: 6px 10px;
+    font-size: 13px;
+    color: #6A737C
+}
+
+    .widget-vote-item:last-child {
+        margin-left: 10px
+    }
+
+    .widget-vote-item a {
+        display: block;
+        font-size: 16px;
+        font-weight: bold;
+        color: #6A737C
+    }
+
+    .widget-vote-item:last-child {
+        background: #DFDFDF
+    }
+
+.unanswered {
+    border: 1px solid #5FBA7D
+}
+
+.answered {
+    background: #5FBA7D;
+    color: #fff
+}
+
+    .answered a {
+        color: #fff
+    }
+
+
+.question-content {
+    float: left;
+    margin-left: 22px;
+    min-width: 60%
+}
+
+    .question-content h3 {
+        font-weight: normal;
+        font-size: 16px
+    }
+
+    .question-content p {
+        font-size: 13px;
+    }
+
+
+.delete {
+    float: right;
+    line-height: 86px;
+    margin-right: 12px;
+    color: #C04848
+}
+
+    .delete i {
+        font-size: 18px;
+    }
+
+
+/* edit user (upload user icon) */
+.user-model-icon-upload {
+    width: 80%;
+    padding: 20px;
+    height: 160px;
+    margin: auto;
+    background: url(../images/upload.svg) center no-repeat;
+    background-size: 80px;
+    border: 2px dashed #DEE3E7;
+    background-color: #E8EBEE;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 60px
+}
+
+    .user-model-icon-upload:hover {
+        border: 2px dashed #C4CED5
+    }
+
+.user-model-icon-upload-footer {
+    background: #3F4A59;
+    height: 80px;
+    margin-top: 40px;
+    margin-bottom: 0
+}
+
+    .user-model-icon-upload-footer .btn {
+        margin-right: 40px;
+        margin-bottom: 0;
+        background: #CDDBE4;
+        border: none;
+        outline: none;
+        cursor: pointer
+    }
+
+#preView {
+   height:140px;
+}
+
+
+/* 话题 */
+.tag-container {
+    clear: both;
+    padding: 10px 0
+}
+
+.post-container {
+    clear: both;
+    border-bottom: 1px solid #E4E6E8;
+    padding: 12px 0
+}
+
+.icon-a {
+    font-size: 16px;
+    color: #5FBA7D
+}
+
+.vote {
+    padding: 2px 6px;
+    background: #5FBA7D;
+    margin-left: 4px;
+    border-radius: 3px;
+    font-size: 13px;
+    color: #fff
+}

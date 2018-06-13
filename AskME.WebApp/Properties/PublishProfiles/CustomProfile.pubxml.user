@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+此文件由 Web 项目的发布/打包过程使用。可以通过编辑此 MSBuild 文件
+自定义此过程的行为。为了解与此相关的更多内容，请访问 https://go.microsoft.com/fwlink/?LinkID=208121。 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\B13\Desktop\Release</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="wwwroot/css/advince.css">
+      <publishTime>04/11/2018 22:46:02</publishTime>
+    </File>
+    <File Include="wwwroot/css/ask.css">
+      <publishTime>04/20/2018 19:58:31</publishTime>
+    </File>
+    <File Include="wwwroot/css/ask.min.css">
+      <publishTime>04/20/2018 19:58:31</publishTime>
+    </File>
+    <File Include="wwwroot/css/blogdetail.css">
+      <publishTime>04/20/2018 19:58:31</publishTime>
+    </File>
+    <File Include="wwwroot/css/blogdetail.min.css">
+      <publishTime>04/20/2018 19:58:31</publishTime>
+    </File>
+    <File Include="wwwroot/css/freamwork.css">
+      <publishTime>04/20/2018 19:58:31</publishTime>
+    </File>
+    <File Include="wwwroot/css/freamwork.min.css">
+      <publishTime>04/20/2018 19:58:31</publishTime>
+    </File>
+    <File Include="wwwroot/css/login.css">
+      <publishTime>04/11/2018 21:41:51</publishTime>
+    </File>
+    <File Include="wwwroot/css/login.min.css">
+      <publishTime>04/20/2018 19:58:31</publishTime>
+    </File>
+    <File Include="wwwroot/css/profile.css">
+      <publishTime>04/20/2018 19:58:31</publishTime>
+    </File>
+    <File Include="wwwroot/css/profile.min.css">
+      <publishTime>04/20/2018 19:58:31</publishTime>
+    </File>
+    <File Include="wwwroot/css/question.css">
+      <publishTime>04/19/2018 18:11:24</publishTime>
+    </File>
+    <File Include="wwwroot/css/question.min.css">
+      <publishTime>04/20/2018 19:58:31</publishTime>
+    </File>
+    <File Include="wwwroot/css/signup.css">
+      <publishTime>04/11/2018 21:41:06</publishTime>
+    </File>
+    <File Include="wwwroot/css/signup.min.css">
+      <publishTime>04/20/2018 19:58:31</publishTime>
+    </File>
+    <File Include="wwwroot/css/site.css">
+      <publishTime>04/20/2018 19:58:31</publishTime>
+    </File>
+    <File Include="wwwroot/css/site.min.css">
+      <publishTime>04/20/2018 19:58:31</publishTime>
+    </File>
+    <File Include="wwwroot/css/tags.css">
+      <publishTime>04/20/2018 19:58:31</publishTime>
+    </File>
+    <File Include="wwwroot/css/tags.min.css">
+      <publishTime>04/20/2018 19:58:31</publishTime>
+    </File>
+    <File Include="wwwroot/css/users.css">
+      <publishTime>04/20/2018 19:58:31</publishTime>
+    </File>
+    <File Include="wwwroot/css/users.min.css">
+      <publishTime>04/20/2018 19:58:31</publishTime>
+    </File>
+    <File Include="wwwroot/favicon.ico">
+      <publishTime>04/20/2018 19:58:31</publishTime>
+    </File>
+    <File Include="wwwroot/images/home-illo-team.svg">
+      <publishTime>04/20/2018 19:58:30</publishTime>
+    </File>
+    <File Include="wwwroot/images/logo.jpg">
+      <publishTime>04/19/2018 18:11:25</publishTime>
+    </File>
+    <File Include="wwwroot/images/logo.png">
+      <publishTime>04/19/2018 18:11:25</publishTime>
+    </File>
+    <File Include="wwwroot/images/upload.png">
+      <publishTime>04/19/2018 21:33:20</publishTime>
+    </File>
+    <File Include="wwwroot/images/upload.svg">
+      <publishTime>04/19/2018 21:35:45</publishTime>
+    </File>
+    <File Include="wwwroot/images/userIcon.jpg">
+      <publishTime>04/20/2018 19:58:30</publishTime>
+    </File>
+    <File Include="wwwroot/images/userIcon.png">
+      <publishTime>04/19/2018 22:41:36</publishTime>
+    </File>
+    <File Include="wwwroot/js/ask.js">
+      <publishTime>04/20/2018 19:58:31</publishTime>
+    </File>
+    <File Include="wwwroot/js/ask.min.js">
+      <publishTime>04/20/2018 19:58:31</publishTime>
+    </File>
+    <File Include="wwwroot/js/login.js">
+      <publishTime>04/15/2018 13:06:32</publishTime>
+    </File>
+    <File Include="wwwroot/js/login.min.js">
+      <publishTime>04/20/2018 19:58:31</publishTime>
+    </File>
+    <File Include="wwwroot/js/md.js">
+      <publishTime>04/20/2018 19:58:31</publishTime>
+    </File>
+    <File Include="wwwroot/js/md.min.js">
+      <publishTime>04/20/2018 21:33:27</publishTime>
+    </File>
+    <File Include="wwwroot/js/question.js">
+      <publishTime>04/19/2018 19:22:29</publishTime>
+    </File>
+    <File Include="wwwroot/js/question.min.js">
+      <publishTime>04/20/2018 19:58:31</publishTime>
+    </File>
+    <File Include="wwwroot/js/register.js">
+      <publishTime>04/15/2018 13:00:43</publishTime>
+    </File>
+    <File Include="wwwroot/js/register.min.js">
+      <publishTime>04/20/2018 19:58:31</publishTime>
+    </File>
+    <File Include="wwwroot/js/user.js">
+      <publishTime>04/19/2018 22:31:52</publishTime>
+    </File>
+    <File Include="wwwroot/js/user.min.js">
+      <publishTime>04/20/2018 19:58:31</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/.bower.json">
+      <publishTime>04/11/2018 21:04:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-theme.css">
+      <publishTime>04/11/2018 21:04:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-theme.css.map">
+      <publishTime>04/11/2018 21:04:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-theme.min.css">
+      <publishTime>04/11/2018 21:04:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-theme.min.css.map">
+      <publishTime>04/11/2018 21:04:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap.css">
+      <publishTime>04/11/2018 21:04:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap.css.map">
+      <publishTime>04/11/2018 21:04:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap.min.css">
+      <publishTime>04/11/2018 21:04:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map">
+      <publishTime>04/11/2018 21:04:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.eot">
+      <publishTime>04/11/2018 21:04:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.svg">
+      <publishTime>04/11/2018 21:04:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>04/11/2018 21:04:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff">
+      <publishTime>04/11/2018 21:04:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2">
+      <publishTime>04/11/2018 21:04:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/js/bootstrap.js">
+      <publishTime>04/11/2018 21:04:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/js/bootstrap.min.js">
+      <publishTime>04/11/2018 21:04:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/js/npm.js">
+      <publishTime>04/11/2018 21:04:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/LICENSE">
+      <publishTime>04/11/2018 21:04:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation-unobtrusive/.bower.json">
+      <publishTime>04/11/2018 21:04:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js">
+      <publishTime>04/11/2018 21:04:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js">
+      <publishTime>04/11/2018 21:04:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation/.bower.json">
+      <publishTime>04/11/2018 21:04:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation/dist/additional-methods.js">
+      <publishTime>04/11/2018 21:04:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation/dist/additional-methods.min.js">
+      <publishTime>04/11/2018 21:04:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation/dist/jquery.validate.js">
+      <publishTime>04/11/2018 21:04:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation/dist/jquery.validate.min.js">
+      <publishTime>04/11/2018 21:04:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation/LICENSE.md">
+      <publishTime>04/11/2018 21:04:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/.bower.json">
+      <publishTime>04/11/2018 21:04:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/dist/jquery.js">
+      <publishTime>04/11/2018 21:04:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/dist/jquery.min.js">
+      <publishTime>04/11/2018 21:04:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/dist/jquery.min.map">
+      <publishTime>04/11/2018 21:04:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/LICENSE.txt">
+      <publishTime>04/11/2018 21:04:02</publishTime>
+    </File>
+    <File Include="wwwroot/UploadImgs/2018/4/19/4cf9d113-c8db-4bd2-ad76-285c392401dc.jpg">
+      <publishTime>04/19/2018 22:21:30</publishTime>
+    </File>
+    <File Include="wwwroot/UploadImgs/2018/4/19/64cdb604-ac9b-45d7-a6c0-4882bf9fddf1.jpg">
+      <publishTime>04/19/2018 22:31:44</publishTime>
+    </File>
+    <File Include="wwwroot/UploadImgs/2018/4/19/8845e82d-cbb0-4d98-b729-f5beb79bb740.jpg">
+      <publishTime>04/19/2018 22:30:20</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

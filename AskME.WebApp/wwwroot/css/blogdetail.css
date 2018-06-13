@@ -1,0 +1,21 @@
+﻿
+
+.blog-header {
+    height: 80px;
+    border-bottom: 1px solid #DBDBDB
+}
+
+.blog-header h1 {
+    font-weight:normal;
+    font-size:18px
+}
+    .blog-header p {
+        font-size:13px
+    }
+        .blog-header p span {
+            margin-left:12px
+        }
+
+.blog-content {
+    padding:0 20px
+}

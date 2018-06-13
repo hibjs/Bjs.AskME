@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewData["Title"] = "怎样提问？";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Styles{
+
+    <environment include="Development">
+        <link href="~/css/advince.css" rel="stylesheet" />
+    </environment>
+    <environment exclude="Development">
+        <link href="~/css/advince.css" rel="stylesheet" asp-append-version="true"/>
+    </environment>
+}
+<div class="container main">
+    <div class="sm-12">
+        <div class="subheader">
+            <p class="h-top-title">如何提问</p>
+        </div>
+    </div>
+    <div class="sm-8">
+        <div class="mainbar">
+            <p>欢迎来到 AskME</p>
+            <p>
+                我们很乐意帮助你，但事实是并非每个问题都得到答案。为了
+                <strong>提高你的机会</strong>，这里有一些提示：
+            </p>
+            <h2>搜索和研究</h2>
+            <p>
+                <i>在问你的问题之前</i>，你是否彻底
+                <a href="#">搜索过答案</a>
+                ？分享你的研究有助于每个人 告诉我们您发现了什么（在本网站或其他地方）以及它为什么不符合您的需求。这表明你已经花时间去尝试帮助自己，它使我们避免重申明显的答案，最重要的是，它可以帮助你得到更具体和相关的答案！
+            </p>
+            <div class="ask-advice-search-container">
+                <input type="text" class="search-title form-input" />
+                <button type="button" class="btn-ask search-button">搜索</button>
+            </div>
+            <h2>成为话题</h2>
+            <p>我们的社区由帮助中心的一组特定主题定义; 请坚持这些主题，避免征求意见或开放式讨论。如果您的问题是关于网站本身，请在我们的meta-discussion网站上询问。如果您正在寻找不同的主题，可能会在另一个Stack Exchange站点上进行介绍。</p>
+            <h2>请明确点</h2>
+            <p>
+                如果你问一个模糊的问题，你会得到一个模糊的答案。但是，如果您给我们详细信息和背景，我们可以提供有用的相关答案。
+
+            </p>
+            <h2>与其他人相关</h2>
+            <p>
+                我们希望尽可能多地帮助尽可能多的人。清楚说明你的问题与更多人相关的问题不仅仅是你，更多的人会对你的问题感兴趣并愿意研究它
+            </p>
+            <h2>保持开放的心态</h2>
+            <p>
+                你的问题的答案可能并不总是你想要的，但这并不意味着它是错误的。一个确凿的答案并不总是可能的。如有疑问，请让人们引用他们的来源，或者解释他们如何/在哪里学到了什么。即使我们不同意你的观点，或者告诉你你想听到的是什么，请记住：我们只是想帮助你。
+            </p>
+            <div class="">
+                <p class="next">
+                    <a asp-route="Ask">继续>></a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="sm-4 sidebar">
+    </div>
+</div>
+

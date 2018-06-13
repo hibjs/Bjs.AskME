@@ -1,0 +1,183 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - AskME，充满乐趣的社区</title>
+
+    <environment include="Development">
+        <link href="~/css/freamwork.css" rel="stylesheet" />
+        <link href="//at.alicdn.com/t/font_532053_2x1bypgsvprs5rk9.css" rel="stylesheet" />
+        <link href="~/css/markdown.css" rel="stylesheet" />
+    </environment>
+    <environment exclude="Development">
+        <link href="~/css/freamwork.css" rel="stylesheet" asp-append-version="true" />
+        <link href="//at.alicdn.com/t/font_532053_2x1bypgsvprs5rk9.css" rel="stylesheet" />
+        <link href="~/css/markdown.min.css" rel="stylesheet"  asp-append-version="true"/>
+    </environment>
+    @RenderSection("Styles", required: false)
+</head>
+<body>
+
+    @{
+        string router = ViewContext.RouteData.Values["controller"].ToString().ToLower();
+    }
+    <header class="site-header js-site-header -fixed" id="">
+        <div class="container">
+            <div class="sm-8">
+                <a href="/" class="logo">
+                    <i class="iconfont icon-stack-overflow"></i>
+                </a>
+                <nav class="navigation pull-left" role="navigation">
+                    <ol class="list">
+                        <li class="item @(router.Equals("question")?"current":"")">
+                            <a href="~/question/new?page=1">问答</a>
+                        </li>
+                        <li class="item @(router.Equals("tag")?"current":"")">
+                            <a asp-route="Tags">标签</a>
+                        </li>
+                        <li class="item @(router.Equals("blog")?"current":"")">
+                            <a asp-route="Blogs">专栏</a>
+                        </li>
+                        <li class="item @(router.Equals("user")?"current":"")">
+                            <a href="~/user">用户</a>
+                        </li>
+                    </ol>
+                </nav>
+                <form method="get" class="searchbar">
+                    <input type="text" class="f-input form-input" placeholder="搜索" />
+                </form>
+            </div>
+            <div class="sm-4 actions">
+                <nav class="navigation pull-left" role="navigation">
+                    <ol class="list">
+                        @{
+                            if (User.Identity.IsAuthenticated)
+                            {
+                                <li class="item">
+                                    <a href="/users/@User.Claims.Single(c => c.Type == System.Security.Claims.ClaimTypes.Sid).Value/@User.Identity.Name">
+                                        <img src=" @(User.Claims.Single(c => c.Type == System.Security.Claims.ClaimTypes.Uri).Value ==""?"/images/userIcon.jpg":User.Claims.Single(c => c.Type == System.Security.Claims.ClaimTypes.Uri).Value) " class="user-icon" title="@User.Identity.Name" />
+                                    </a>
+                                </li>
+                            }
+                        }
+                        <li class="item">
+                            <a href="#">
+                                <i class="iconfont icon-question"></i>
+                            </a>
+                        </li>
+                        <li class="item">
+                            <a href="#">
+                                <i class="iconfont icon-inbox"></i>
+                            </a>
+                        </li>
+                    </ol>
+                </nav>
+                @{
+                    if (!User.Identity.IsAuthenticated)
+                    {
+                        <div class="cats">
+                            <a asp-route="Login" class="login-link btn-clear">登录</a>
+                            <a asp-route="SignUp" class="login-link btn">注册</a>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </header>
+    @RenderBody()
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="sm-3">
+                <h1>AskME</h1>
+            </div>
+            <div class="sm-2">
+                <h5 class="title">网站相关</h5>
+                <nav>
+                    <ul class="-list">
+                        <li class="-item">
+                            <a href="#">关于我们</a>
+                        </li>
+                        <li class="-item">
+                            <a href="#">服务条款</a>
+                        </li>
+                        <li class="-item">
+                            <a href="#">帮助中心</a>
+                        </li>
+                        <li class="-item">
+                            <a href="#">每周精选</a>
+                        </li>
+                        <li class="-item">
+                            <a href="#">编辑器语法</a>
+                        </li>
+                        <li class="-item">
+                            <a href="#">社区服务中心</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="sm-2">
+                <h5 class="title">联系合作</h5>
+                <nav>
+                    <ul class="-list">
+                        <li class="-item">
+                            <a href="#">联系我们</a>
+                        </li>
+                        <li class="-item">
+                            <a href="#">加入我们</a>
+                        </li>
+                        <li class="-item">
+                            <a href="#">建议反馈</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="sm-2">
+                <h5 class="title">社区日志</h5>
+                <nav>
+                    <ul class="-list">
+                        <li class="-item">
+                            <a href="#">产品技术日志</a>
+                        </li>
+                        <li class="-item">
+                            <a href="#">社区运营日志</a>
+                        </li>
+                        <li class="-item">
+                            <a href="#">团队日志</a>
+                        </li>
+                        <li class="-item">
+                            <a href="#">社区访谈</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="sm-3 -copyright">
+                <ul class="-list">
+                    <li class="-item"><a href="#">博客</a>&nbsp;·</li>
+                    <li class="-item">&nbsp;<a href="#">知乎</a> ·</li>
+                    <li class="-item">&nbsp;<a href="#">微博</a> ·</li>
+                    <li class="-item">&nbsp;<a href="#">GitHub</a></li>
+                </ul>
+                <div class="clear">
+                    <p>
+                        本站信息由用户自行...<br />
+                        &copy; 2017 bishisan
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <environment include="Development">
+        <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdn.bootcss.com/marked/0.3.19/marked.min.js"></script>
+        <script src="~/js/md.js"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdn.bootcss.com/marked/0.3.19/marked.min.js"></script>
+        <script src="~/js/md.js" asp-append-version="true"></script>
+    </environment>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

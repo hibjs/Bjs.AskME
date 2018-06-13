@@ -1,0 +1,57 @@
+﻿
+
+@{
+    ViewData["Title"] = "注册";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Styles{
+    <environment include="Development">
+        <link href="~/css/login.css" rel="stylesheet" />
+    </environment>
+    <environment exclude="Development">
+        <link href="~/css/login.min.css" rel="stylesheet" asp-append-version="true" />
+    </environment>
+}
+<div>
+    <main class="container main">
+        <div class="sm-12 subheader">
+            <div class="tabs" style="float:left">
+                <a asp-route="Login" class="youarehere">登陆</a>
+                <a asp-route="SignUp" to="signup">注册</a>
+            </div>
+        </div>
+        <div id="login-page">
+            <div id="formContainer">
+                <form id="login-form" method="post" action="">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <br />
+                        <input name="email" id="email" type="email" placeholder="you@example.org" class="form-input" />
+                    </div>
+                    <div class="form-group">
+                        <label for="password">密码</label>
+                        <br />
+                        <input name="pwssword" id="password" type="password" placeholder="******" class="form-input" />
+                    </div>
+                    <div class="form-group">
+                        <a href="#" title="忘记密码？" class="forget-link">忘记密码？</a>
+                        <button name="submit-button" type="button" class="fr" value="登陆" id="login-btn">登录</button>
+                    </div>
+                </form>
+            </div>
+            <div class="switch">
+                还没有账户，
+                <a asp-route="SignUp">马上注册</a>
+            </div>
+        </div>
+    </main>
+</div>
+
+@section Scripts{
+    <environment include="Development">
+        <script src="~/js/login.js"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/login.min.js" asp-append-version="true"></script>
+    </environment>
+}

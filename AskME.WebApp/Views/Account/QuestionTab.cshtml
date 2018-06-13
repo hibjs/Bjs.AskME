@@ -1,0 +1,70 @@
+﻿
+@{
+    ViewData["Title"] = "我的问答";
+    Layout = "~/Views/Shared/_LayoutAccount.cshtml";
+}
+
+@{
+    List<AskME.Core.Entities.Question> questions = ViewBag.Questions;
+}
+<main class="container main">
+    <div class="sm-12">
+        <div class="subheader">
+            <div class="tabs tab-left">
+                <a href="~/users/@User.Claims.Single(c=>c.Type==System.Security.Claims.ClaimTypes.Sid).Value/@User.Identity.Name">主页</a>
+                <a href="~/users/@User.Claims.Single(c=>c.Type==System.Security.Claims.ClaimTypes.Sid).Value/@User.Identity.Name/activity" class="youarehere">足迹</a>
+                <a href="~/users/edit/@User.Claims.Single(c=>c.Type==System.Security.Claims.ClaimTypes.Sid).Value">修改个人信息</a>
+            </div>
+        </div>
+        <div class="side-menu sm-2">
+            <ul style="margin:0;padding:0">
+                <li class="category">
+                    回答
+                    <ul>
+                        <li><a href="~/users/@User.Claims.Single(c=>c.Type==System.Security.Claims.ClaimTypes.Sid).Value/@User.Identity.Name/activity?tab=question" class="side-menu-active">我的提问</a></li>
+                        <li><a href="~/users/@User.Claims.Single(c=>c.Type==System.Security.Claims.ClaimTypes.Sid).Value/@User.Identity.Name/activity?tab=answer">我的回答</a></li>
+                    </ul>
+                </li>
+
+                <li class="category">
+                    专栏
+                    <ul>
+                        <li><a href="~/blogs/add">写文章</a></li>
+                        <li><a href="~/users/@User.Claims.Single(c=>c.Type==System.Security.Claims.ClaimTypes.Sid).Value/@User.Identity.Name/activity?tab=blogs">我的专栏</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+        <div class="mainbar sm-10">
+            <div class="subheader sm-12">
+                <p class="h-top-title">@Html.Raw(questions.Count) 个提问</p>
+            </div>
+            @{
+                foreach (AskME.Core.Entities.Question question in questions)
+                {
+                    <div class="question">
+                        <div class="widget-vote">
+                            <span class="widget-vote-item @(question.Count>0?"answered":"unanswered")"><a href="#">@question.Count</a> 回答</span>
+                            <span class="widget-vote-item"><a href="#">@(question.Up + question.Down)</a> 投票</span>
+                        </div>
+                        <div class="question-content">
+                            <h3><a href="~/question/@question.Id">@Html.Raw(question.Title.Length > 40 ? question.Title.Substring(0, 24) : question.Title)</a></h3>
+                            <p>
+                                @{ foreach (var tag in question.Tags)
+                                    {
+                                        <a href="~/question/tagged/@Html.Raw(tag.TagName)" class="post-tag post-tag-hover">@Html.Raw(tag.TagName)</a>
+                                    }
+                                }
+                                <span class="pull-right datetime">@Html.Raw(question.SubTime)<a href="#">@Html.Raw(question.UserName)</a></span>
+                            </p>
+                        </div>
+                        <a href="#/@question.Id" class="delete" title="删除，不可撤回"><i class="iconfont icon-close"></i></a>
+                    </div>
+                }
+            }
+
+        </div>
+    </div>
+</main>
+

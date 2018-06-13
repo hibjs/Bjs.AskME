@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewData["Title"] = "专栏";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Styles{
+    <environment include="Development">
+        <link href="~/css/site.css" rel="stylesheet" />
+    </environment>
+    <environment exclude="Development">
+        <link href="~/css/site.min.css" rel="stylesheet" asp-append-version="true" />
+    </environment>
+}
+
+    <main class="main container">
+        <div class="sm-8" style="min-height:600px">
+            <div class="subheader">
+                <p class="h-top-title">专栏</p>
+                <div class="tabs">
+                    <a href="#" class="youarehere">最新</a>
+                </div>
+            </div>
+            @{
+            foreach (AskME.Core.Entities.Blog blog in ViewBag.Blogs)
+            {
+                <div class="blog-summary">
+                    <div class="summary">
+                        <h3 class="question-hyperlink">
+                            <a href="~/blogs/@blog.Id">@Html.Raw(blog.Title)</a>
+                        </h3>
+                        <div class="blog-user-info">
+                            @{
+                            foreach (var item in blog.Tags)
+                            {
+                                <a href="~/question/tagged/@Html.Raw(item.TagName)" class="post-tag post-tag-hover">@Html.Raw(item.TagName)</a>
+                        }
+                            }
+                            <span style="margin-left:16px" class="datetime">@blog.SubTime</span><a href="~/users/@blog.UserInfoId/@blog.UserName">@blog.UserName</a>
+                        </div>
+                        <div class="excerpt">
+                            @Html.Raw(blog.Content.Length > 80 ? blog.Content.Substring(0, 80) : blog.Content)
+                        </div>
+                    </div>
+                </div>
+        }
+            }
+
+        </div>
+
+        <div class="page sm-8">
+            <a href="~/blogs?page=@((ViewBag.Page-1)==0?1:(ViewBag.Page-1))">Previous</a>
+            <a href="~/blogs?page=@(ViewBag.Page+1)">Next</a>
+        </div>
+    </main>
+

@@ -1,0 +1,36 @@
+﻿/*
+ * Tags.css
+ */
+
+
+.main {
+    margin-top: 70px;
+}
+
+.subtitle {
+    font-size: 13px
+}
+
+.tag-list {
+    padding: 4px
+}
+
+.tag-cell {
+    float: left;
+    width: 24%;
+    padding: 4px;
+    height: 140px;
+    overflow: hidden;
+    overflow: hidden;
+    border-bottom: 1px dashed #E4E6E8
+}
+
+.excerpt {
+    font-size: 13px;
+    line-height: 1.4
+}
+
+.item-multiplier {
+    font-size: 13px;
+    color: #6A737C
+}

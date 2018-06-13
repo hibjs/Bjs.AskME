@@ -1,0 +1,91 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Styles{
+    <environment include="Development">
+        <link href="~/css/site.css" rel="stylesheet" />
+    </environment>
+
+    <environment exclude="Development">
+        <link href="~/css/site.min.css" rel="stylesheet" asp-append-version="true" />
+    </environment>
+}
+<main class="container main">
+    <div class="sm-8" style="min-height:600px">
+        <div class="subheader">
+            <p class="h-top-title">@Html.Raw(ViewBag.Tag.TagName) </p>
+            @{
+                if (ViewBag.Follow)
+                {
+                    <a href="javascript:void(0)" class="btn-follow pull-right">
+                        <i class="iconfont icon-right"></i>&nbsp;已关注
+                    </a>
+                }
+                else
+                {
+                    <a href="javascript:void(0)" class="btn-follow pull-right" onclick="addFollow(this,@ViewBag.Tag.Id)">
+                        <i class="iconfont icon-add"></i>&nbsp;关注
+                    </a>
+                }
+            }
+
+        </div>
+
+        <div class="tag-detail">
+            <p>@Html.Raw(ViewBag.Tag.Description)</p>
+        </div>
+        @{
+            foreach (AskME.Core.Entities.Question q in ViewBag.Questions)
+            {
+                <div class="question-summary">
+                    <div class="statscontainer">
+                        <div class="stats">
+                            <div class="vote">
+                                <div class="votes">
+                                    <span class="vote-count-post">
+                                        <strong>@(q.Up + q.Down)</strong>
+                                    </span>
+                                    <div class="viewcount">投票</div>
+                                </div>
+                            </div>
+                            <div class="status @(q.Count>0?"answered":"unanswered") answered">
+                                <span class="status-count-post">
+                                    <strong>@(q.Count)</strong>
+                                </span>
+                                <div class="viewcount">回答</div>
+                            </div>
+                        </div>
+                        <div class="views" title="10 views">
+                            4k 浏览
+                        </div>
+                    </div>
+                    <div class="summary">
+                        <h3 class="question-hyperlink">
+                            <a href="~/question/@q.Id">@Html.Raw(q.Title)</a>
+                        </h3>
+                        <div class="excerpt" data-markdown="true">
+                            @Html.Raw(q.Description.Length > 80 ? q.Description.Substring(0, 80) + "..." : q.Description)
+                        </div>
+                        <div class="tags ">
+                            @{
+                                foreach (var t in q.Tags)
+                                {
+                                    <a href="~/question/tagged/@Html.Raw(t.TagName)" class="post-tag post-tag-hover">@Html.Raw(t.TagName)</a>
+                                }
+                            }
+                        </div>
+                        <div class="user-info">
+                            <span class="datetime">@Html.Raw(q.SubTime)</span>
+                            <a href="#">@Html.Raw(q.UserName)</a>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            }
+        }
+    </div>
+</main>
+
+

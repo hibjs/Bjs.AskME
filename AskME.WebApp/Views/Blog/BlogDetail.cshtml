@@ -1,0 +1,38 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Styles{
+    <environment include="Development">
+        <link href="~/css/blogdetail.css" rel="stylesheet" />
+    </environment>
+    <environment exclude="Development">
+        <link href="~/css/blogdetail.min.css" rel="stylesheet" asp-append-version="true" />
+    </environment>
+}
+<main class="main container">
+    <div class="blog">
+        <div class="blog-header">
+            <div class="sm-12">
+                <h1> @Html.Raw(ViewBag.Blog.Title)</h1>
+                <p>
+                    @{
+                        foreach (var item in ViewBag.Blog.Tags)
+                        {
+                            <a href="~/question/tagged/@Html.Raw(item.TagName)" class="post-tag post-tag-hover"> @Html.Raw(item.TagName)</a>
+                        }
+                    }
+                    <span class="user-info datetime">@Html.Raw(ViewBag.Blog.SubTime)</span><span> &nbsp;&nbsp;<a href="~/users/@ViewBag.Blog.UserInfoId/@ViewBag.Blog.UserName"><strong>@Html.Raw(ViewBag.Blog.UserName)</strong> </a></span>
+                </p>
+            </div>
+        </div>
+
+        <div class="sm-8">
+            <div class="blog-content" data-markdown="true">
+                @Html.Raw(ViewBag.Blog.Content)
+            </div>
+        </div>
+    </div>
+</main>
+

@@ -1,0 +1,109 @@
+﻿
+@{
+    ViewData["Title"] = "用户 - Atom";
+    Layout = "~/Views/Shared/_LayoutAccount.cshtml";
+}
+
+@section Styles{
+    <environment include="Development">
+        <link href="~/css/profile.css" rel="stylesheet" />
+    </environment>
+    <environment exclude="Development">
+        <link href="~/css/profile.min.css" rel="stylesheet" asp-append-version="true" />
+    </environment>
+}
+
+<main class="container main">
+    <div class="sm-12">
+        <div class="subheader">
+            <div class="tabs tab-left">
+                <a href="~/users/@User.Claims.Single(c => c.Type == System.Security.Claims.ClaimTypes.Sid).Value/@User.Identity.Name" class="youarehere">主页</a>
+                <a href="~/users/@User.Claims.Single(c => c.Type == System.Security.Claims.ClaimTypes.Sid).Value/@User.Identity.Name/activity?tab=question">足迹</a>
+                <a href="~/users/edit/@User.Claims.Single(c => c.Type == System.Security.Claims.ClaimTypes.Sid).Value">修改个人信息</a>
+            </div>
+        </div>
+        <div class="sm-2">
+            <div class="avatar-card">
+                <div class="avatar">
+                    <p class="text-center">
+                        <a href="#"><img src="@(ViewBag.UserInfo.Icon == null ? "/images/userIcon.jpg" : ViewBag.UserInfo.Icon)" class="avatar-user" /></a>
+                    </p>
+                </div>
+                <div class="record">
+                    <a href="#" class="record-answer"><strong>@ViewBag.AnswerCount</strong>回答</a>
+                    <a href="#" class="record-question"><strong>@ViewBag.QuestionCount</strong> 提问</a>
+                </div>
+            </div>
+        </div>
+        <div class="sm-4 about">
+            <h2>@Html.Raw(ViewBag.UserInfo.UserName)</h2>
+            <div class="current-position">
+                <p>@Html.Raw(ViewBag.UserInfo.Bio)</p>
+            </div>
+            <div class="bio">
+                @Html.Raw(ViewBag.UserInfo.SelfInfo)
+            </div>
+        </div>
+        <div class="sm-4 user-links">
+            <ul class="user-link">
+                @{ if (ViewBag.UserInfo.Address != null)
+                    {
+                        <li><span class="iconfont icon-location"></span>@Html.Raw(ViewBag.UserInfo.Address)</li>
+                    }
+                }
+                <li><span class="iconfont icon-timer"></span>@Html.Raw(ViewBag.UserInfo.CreateTime)</li>
+            </ul>
+        </div>
+
+        <div class="sm-10 sm-offset-2">
+            <div class="subheader">
+                <p class="h-top-title">关注标签</p>
+            </div>
+            <div class="tag-container">
+                @{
+                    foreach (var tag in ViewBag.Tags)
+                    {
+                        <a href="~/question/tagged/@tag.TagName" class="post-tag post-tag-hover">@Html.Raw(tag.TagName)</a>
+                    }
+                }
+
+            </div>
+        </div>
+
+        <div class="sm-10 sm-offset-2 posts-wrapper">
+            <div class="subheader">
+                <p class="h-top-title">问答</p>
+            </div>
+
+            @{
+                foreach (AskME.Core.Entities.Question question in ViewBag.Questions)
+                {
+                    <div class="post-container">
+                        <span class="iconfont icon-answer icon-a"></span>
+                        <span class="vote">@(question.Up + question.Down)</span>
+                        <a href="~/question/@question.Id" class="answer-hyperlink">
+                            @Html.Raw(question.Title)
+                        </a>
+                        <span class="pull-right datetime">@Html.Raw(question.SubTime)</span>
+                    </div>
+                }
+            }
+            @{
+                foreach (AskME.Core.Entities.Question answer in ViewBag.Answers)
+                {
+                    <div class="post-container">
+                        <span class="iconfont icon-questions icon-a"></span>
+                        <span class="vote">@(answer.Up + answer.Down)</span>
+                        <a href="~/question/@answer.Id" class="answer-hyperlink">
+                            @answer.Id
+                            @Html.Raw(answer.Title)
+                        </a>
+                        <span class="pull-right datetime">@Html.Raw(answer.SubTime)</span>
+                    </div>
+                }
+            }
+        </div>
+
+    </div>
+</main>
+

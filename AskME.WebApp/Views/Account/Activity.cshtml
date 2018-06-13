@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewData["Title"] = "Activity";
+    Layout = "~/Views/Shared/_LayoutAccount.cshtml";
+}
+
+
+<main class="container main">
+    <div class="sm-12">
+        <div class="subheader">
+            <div class="tabs tab-left">
+                <a href="~/users/@User.Claims.Single(c=>c.Type==System.Security.Claims.ClaimTypes.Sid).Value/@User.Identity.Name">主页</a>
+                <a href="~/users/@User.Claims.Single(c=>c.Type==System.Security.Claims.ClaimTypes.Sid).Value/@User.Identity.Name/activity" class="youarehere">足迹</a>
+                <a href="~/users/edit/@User.Claims.Single(c=>c.Type==System.Security.Claims.ClaimTypes.Sid).Value">修改个人信息</a>
+            </div>
+        </div>
+    </div>
+</main>
+

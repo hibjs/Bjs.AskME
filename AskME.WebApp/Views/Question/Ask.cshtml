@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewData["Title"] = "提问";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Styles{
+    <environment include="Development">
+        <link href="~/css/ask.css" rel="stylesheet" />
+    </environment>
+    <environment exclude="Development">
+        <link href="~/css/ask.min.css" rel="stylesheet" asp-append-version="true" />
+    </environment>
+}
+
+<div class="container main">
+    <div class="sm-8">
+        <div class="form-group">
+            <label>标题</label>
+            <input type="text" placeholder="一句话说清问题，使用问好结尾" class="form-input" id="title" />
+        </div>
+        <div class="form-group">
+            <label>问题描述</label>
+            <div>
+                <textarea class="form-textarea mdediter" col="20" id="description" placeholder="/*&#10; *1、你可以使用Markdown语法进行编辑，使得条例更清&#10; *2、详细 描述你的问题&#10; *3、 写上你尝试的解决方法&#10; */" oninput="preView(this)"></textarea>
+                <div class="grippie"></div>
+            </div>
+            <div class="preview" id="preview">
+            </div>
+        </div>
+        <div class="form-group">
+            <label>标签</label>
+            <p id="tags"></p>
+            <input type="text" placeholder="选择问题的相关话题，敲个空格让我们检索一下你的标签存不存在奥！" class="form-input" id="tag" name="tag" oninput="getData(this)" />
+            <div class="tag-suggestions" id="tag-suggestions">
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="button" class="btn btn-ask" id="question-btn">提交问题</button>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal-wrapper" id="addTagModal">
+    <div class="modal-backdrop"></div>
+    <div class="modal modal-large questionask-modal">
+        <div class="modal-inner">
+            <h2 class="modal-title">添加标签</h2>
+            <div class="addtag-form">
+                <form>
+                    <div class="form-group">
+                        <label for="tagName">标签</label>
+                        <input type="text" class="form-input" id="tagName"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="des">描述</label>
+                        <textarea class="form-textarea" id="des"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-ask pull-right" onclick="saveTag()">保存</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+        <button type="button" title="关闭" class="button modal-closebutton">
+            <i class="iconfont icon-close modal-closeicon"></i>
+        </button>
+    </div>
+</div>
+@section Scripts{
+    <environment include="Development">
+        <script src="~/js/ask.js"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/ask.min.js" asp-append-version="true"></script>
+    </environment>
+}
+
