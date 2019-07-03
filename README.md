@@ -12,7 +12,7 @@
 - Chrome
 - IIS 10.0
 
-> 参考文档
+## 参考文档
   [https://www.microsoft.com/net/learn/architecture](https://www.microsoft.com/net/learn/architecture)
   
   [https://github.com/dotnet-architecture/eShopOnWeb](https://github.com/dotnet-architecture/eShopOnWeb)
